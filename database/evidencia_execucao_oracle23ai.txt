@@ -1,0 +1,450 @@
+-- Saída real da execução de 00_instalar_tudo.sql em Oracle Database 23ai Free (17/11/2026)
+
+
+PL/SQL procedure successfully completed.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Sequence created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+View created.
+
+
+View created.
+
+>>> 01_ddl.sql executado com sucesso.
+
+Package created.
+
+
+Package body created.
+
+No errors.
+>>> 02_pkg_bairro_ativo.sql executado com sucesso.
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+No errors.
+>>> 03_triggers.sql executado com sucesso.
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Commit complete.
+
+Ocorrência BA-2026-100000 registrada com sucesso.
+Ocorrência BA-2026-100001 registrada com sucesso.
+Ocorrência BA-2026-100002 registrada com sucesso.
+Ocorrência BA-2026-100003 registrada com sucesso.
+Ocorrência BA-2026-100004 registrada com sucesso.
+Ocorrência BA-2026-100005 registrada com sucesso.
+Ocorrência BA-2026-100006 registrada com sucesso.
+
+PL/SQL procedure successfully completed.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+7 rows updated.
+
+
+Commit complete.
+
+>>> 04_dml_carga.sql executado com sucesso.
+
+===== 1) Triagem automática: função de pontuação =====
+
+CODIGO			 PONTOS
+-------------------- ----------
+PRIORIDADE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ILUMINACAO		     52
+ALTA
+
+
+1 row selected.
+
+
+===== 2) Registro com detecção de duplicidade (vira APOIO) =====
+Resultado: Já existe a ocorrência BA-2026-100000 a 15 m. Seu apoio foi registrado e aumentou a prioridade do chamado.
+
+PL/SQL procedure successfully completed.
+
+
+PROTOCOLO	     QTD_APOIOS  PONTUACAO PRIORIDA
+-------------------- ---------- ---------- --------
+BA-2026-100000		      1 	73 ALTA
+
+1 row selected.
+
+
+===== 3) Apoios de vários cidadãos elevam a prioridade =====
+Cidadão 1: Seu apoio foi registrado e aumentou a prioridade do chamado.
+Cidadão 2: Seu apoio foi registrado e aumentou a prioridade do chamado.
+Cidadão 3: Você é o autor desta ocorrência.
+Cidadão 4: Seu apoio foi registrado e aumentou a prioridade do chamado.
+Cidadão 5: Seu apoio foi registrado e aumentou a prioridade do chamado.
+
+PL/SQL procedure successfully completed.
+
+
+PROTOCOLO	     QTD_APOIOS  PONTUACAO PRIORIDA
+-------------------- ---------- ---------- --------
+BA-2026-100002		      4 	63 ALTA
+
+1 row selected.
+
+
+===== 4) Fluxo de atendimento + histórico automático =====
+
+PL/SQL procedure successfully completed.
+
+
+PROTOCOLO	     STATUS_ANTER STATUS_NOVO  OBSERVACAO				     QUANDO
+-------------------- ------------ ------------ --------------------------------------------- -----------
+BA-2026-100004                    ABERTA       Ocorrência registrada e encaminhada para Comp 17/11 06:05
+					       anhia de Saneamento.
+
+BA-2026-100004       ABERTA       EM_ANALISE   Vistoria agendada pela concessionária.        17/11 18:05
+BA-2026-100004	     EM_ANALISE   EM_EXECUCAO  Equipe 12 no local.			     17/11 18:05
+BA-2026-100004       EM_EXECUCAO  RESOLVIDA    Tubulação substituída.                        17/11 18:05
+
+4 rows selected.
+
+
+===== 5) Regras de negócio protegidas (erros esperados) =====
+OK - bloqueado: ORA-20011: Transição inválida: RESOLVIDA -> ABERTA
+
+PL/SQL procedure successfully completed.
+
+OK - bloqueado: ORA-20030: A avaliação só é permitida após a resolução da ocorrência.
+
+PL/SQL procedure successfully completed.
+
+
+===== 6) Avaliação do atendimento =====
+Avaliações registradas.
+
+PL/SQL procedure successfully completed.
+
+
+===== 7) Escalonamento automático de atrasos (BULK COLLECT/FORALL) =====
+Prioridades recalculadas: 1 | escalonadas para CRÍTICA: 0
+=========== OCORRÊNCIAS FORA DO PRAZO ===========
+BA-2026-100000 | Calçada / Acessibilidade   | ALTA    (73 pts) | 2 dia(s) | Secretaria da Pessoa com Deficiência
+BA-2026-100001 | Iluminação pública         | ALTA    (52 pts) | 5 dia(s) | Ilume / Subprefeitura
+
+PL/SQL procedure successfully completed.
+
+
+===== 8) Indicadores por bairro =====
+==================== INDICADORES 17/11/2026 ====================
+BAIRRO               TOTAL  RESOLV  ATRAS  TAXA%  PRAZO%  NOTA  ÍNDICE
+Bela Vista		 4	 1	2     25       0   2.0	    21
+Cerqueira César          1       0      0      0       0     -      12
+Consolação               1       0      0      0       0     -      12
+Jardim Paulista 	 1	 1	0    100     100   5.0	   100
+
+PL/SQL procedure successfully completed.
+
+
+BAIRRO										     INDICE
+-------------------------------------------------------------------------------- ----------
+Jardim Paulista 									100
+Bela Vista										 21
+Cerqueira César                                                                          12
+Consolação                                                                               12
+
+4 rows selected.
+
+
+CATEGORIA							  TOTAL RESOLVIDAS TEMPO_MEDIO_DIAS CIDADAOS_AFETADOS
+------------------------------------------------------------ ---------- ---------- ---------------- -----------------
+Calçada / Acessibilidade                                              1          0                                  1
+Iluminação pública                                                    1          0                                  0
+Alagamento / Bueiro						      1 	 0				    4
+Buraco na via							      1 	 0				    0
+Vazamento de água                                                     1          1               .5                 0
+Sinalização / Semáforo                                                1          0                                  0
+Lixo / Entulho							      1 	 1		 15		    0
+Árvore / Poda                                                         0          0
+
+8 rows selected.
+
+
+===== 9) Distância (Haversine) entre ocorrências =====
+
+ORIGEM		     DESTINO		      METROS
+-------------------- -------------------- ----------
+BA-2026-100003	     BA-2026-100005		  39
+BA-2026-100000	     BA-2026-100003		 527
+BA-2026-100000	     BA-2026-100005		 547
+BA-2026-100001	     BA-2026-100004		 564
+BA-2026-100003	     BA-2026-100006		 663
+
+5 rows selected.
+
+
+===== 10) Log de erros gravado em transação autônoma =====
+
+ROTINA							     CODIGO_ERRO MENSAGEM
+------------------------------------------------------------ ----------- --------------------------------------------------------------------------------
+PRC_ATUALIZAR_STATUS                                              -20011 ORA-20011: Transição inválida: RESOLVIDA -> ABERTA
+PRC_AVALIAR                                                       -20030 ORA-20030: A avaliação só é permitida após a resolução da ocorrência.
+
+2 rows selected.
+
+
+===== 11) Job diário (DBMS_SCHEDULER) =====
+
+PL/SQL procedure successfully completed.
+
+Job JOB_BAIRRO_ATIVO_DIARIO criado.
+
+PL/SQL procedure successfully completed.
+
+>>> 05_testes_e_job.sql executado com sucesso.

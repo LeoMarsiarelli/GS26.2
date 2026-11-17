@@ -1,0 +1,115 @@
+erDiagram
+    BAIRRO ||--o{ CIDADAO : "reside"
+    BAIRRO ||--o{ OCORRENCIA : "localiza"
+    BAIRRO ||--o{ INDICADOR_BAIRRO : "consolida"
+    ORGAO ||--|{ CATEGORIA : "atende"
+    CATEGORIA ||--o{ OCORRENCIA : "classifica"
+    CIDADAO ||--o{ OCORRENCIA : "registra"
+    CIDADAO ||--o{ APOIO : "apoia"
+    OCORRENCIA ||--o{ APOIO : "recebe"
+    OCORRENCIA ||--|{ HISTORICO_STATUS : "possui"
+    OCORRENCIA ||--o| AVALIACAO : "recebe"
+    CIDADAO ||--o{ AVALIACAO : "avalia"
+
+    BAIRRO {
+        NUMBER id_bairro PK
+        VARCHAR2 nome UK
+        VARCHAR2 cidade UK
+        CHAR uf UK
+    }
+    CIDADAO {
+        NUMBER id_cidadao PK
+        VARCHAR2 nome
+        VARCHAR2 email UK
+        VARCHAR2 telefone
+        NUMBER id_bairro FK
+        CHAR necessidade_acess
+        CHAR fonte_grande
+        CHAR alto_contraste
+        DATE dt_cadastro
+    }
+    ORGAO {
+        NUMBER id_orgao PK
+        VARCHAR2 nome UK
+        VARCHAR2 telefone
+        VARCHAR2 email
+    }
+    CATEGORIA {
+        NUMBER id_categoria PK
+        VARCHAR2 codigo UK
+        VARCHAR2 nome
+        NUMBER sla_dias
+        NUMBER peso_risco
+        NUMBER id_orgao FK
+    }
+    PALAVRA_CHAVE_RISCO {
+        NUMBER id_palavra PK
+        VARCHAR2 termo UK
+        VARCHAR2 grupo
+        NUMBER peso
+    }
+    OCORRENCIA {
+        NUMBER id_ocorrencia PK
+        VARCHAR2 protocolo UK
+        NUMBER id_cidadao FK
+        NUMBER id_categoria FK
+        NUMBER id_bairro FK
+        VARCHAR2 descricao
+        VARCHAR2 endereco
+        NUMBER latitude
+        NUMBER longitude
+        VARCHAR2 foto_url
+        VARCHAR2 status
+        VARCHAR2 prioridade
+        NUMBER pontuacao
+        CHAR afeta_acess
+        NUMBER qtd_apoios
+        DATE dt_abertura
+        DATE dt_prazo
+        DATE dt_resolucao
+    }
+    APOIO {
+        NUMBER id_ocorrencia PK,FK
+        NUMBER id_cidadao PK,FK
+        DATE dt_apoio
+    }
+    HISTORICO_STATUS {
+        NUMBER id_historico PK
+        NUMBER id_ocorrencia FK
+        VARCHAR2 status_anterior
+        VARCHAR2 status_novo
+        VARCHAR2 observacao
+        DATE dt_evento
+        VARCHAR2 usuario_bd
+    }
+    AVALIACAO {
+        NUMBER id_avaliacao PK
+        NUMBER id_ocorrencia FK,UK
+        NUMBER id_cidadao FK
+        NUMBER nota
+        VARCHAR2 comentario
+        DATE dt_avaliacao
+    }
+    INDICADOR_BAIRRO {
+        NUMBER id_indicador PK
+        NUMBER id_bairro FK
+        DATE dt_referencia
+        NUMBER total
+        NUMBER abertas
+        NUMBER resolvidas
+        NUMBER atrasadas
+        NUMBER taxa_resolucao
+        NUMBER pct_no_prazo
+        NUMBER tempo_medio_dias
+        NUMBER satisfacao_media
+        NUMBER indice_zeladoria
+    }
+    LOG_ERRO {
+        NUMBER id_log PK
+        VARCHAR2 rotina
+        NUMBER codigo_erro
+        VARCHAR2 mensagem
+        VARCHAR2 parametros
+        TIMESTAMP dt_erro
+        VARCHAR2 usuario_bd
+    }

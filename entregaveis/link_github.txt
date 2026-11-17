@@ -1,0 +1,10 @@
+Global Solution 2 - 2026 | CitizenTech | Turma 3SIOA
+Projeto: BairroAtivo - Zeladoria urbana colaborativa e acessível
+
+Repositório GitHub (código-fonte, README e modelo de dados):
+https://github.com/LeoMarsiarelli/GS26.2
+
+Integrantes:
+- Nome completo - RM
+- Nome completo - RM
+- Nome completo - RM

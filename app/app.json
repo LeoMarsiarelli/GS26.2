@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "BairroAtivo",
+    "slug": "bairro-ativo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.fiap.bairroativo",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Usamos sua localização para registrar o local do problema e mostrar ocorrências próximas.",
+        "NSCameraUsageDescription": "Usamos a câmera para fotografar o problema.",
+        "NSPhotoLibraryUsageDescription": "Usamos a galeria para anexar uma foto do problema."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B6E4F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "br.com.fiap.bairroativo",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Usamos sua localização para registrar o local do problema e mostrar ocorrências próximas."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Usamos a galeria para anexar uma foto do problema.",
+          "cameraPermission": "Usamos a câmera para fotografar o problema."
+        }
+      ]
+    ],
+    "scheme": "bairroativo"
+  }
+}

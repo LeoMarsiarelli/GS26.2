@@ -4,7 +4,5 @@ Projeto: BairroAtivo - Zeladoria urbana colaborativa e acessível
 Vídeo Pitch de Venda (até 3 minutos) - YouTube NÃO LISTADO:
 COLE_AQUI_O_LINK_DO_YOUTUBE
 
-Integrantes:
-- Nome completo - RM
-- Nome completo - RM
-- Nome completo - RM
+Integrante:
+- Leonardo Marsiarelli - RM 555366 - Turma 3SIOA

@@ -1,0 +1,14 @@
+Global Solution 2 - 2026 | CitizenTech | Turma 3SIOA
+Projeto: BairroAtivo - Zeladoria urbana colaborativa e acessível
+
+Repositório GitHub (código-fonte, README e modelo de dados):
+https://github.com/LeoMarsiarelli/GS26.2
+
+Vídeo Pitch Técnico - YouTube NÃO LISTADO: Link postado primeiro que foi vídeo errado sem edição
+https://youtu.be/wKVUB3tcPPE?si=qF8XjJp_fmuzK6sg
+
+Vídeo Pitch Técnico (até 5 minutos) - YouTube NÃO LISTADO: Link postado correto com edição
+https://youtu.be/Gsv774483Dc?si=YXTtje0dxaTM1QMj
+
+Integrante:
+- Leonardo Marsiarelli - RM 555366 - Turma 3SIOA

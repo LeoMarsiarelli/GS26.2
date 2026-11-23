@@ -12,7 +12,7 @@ LINKS DE ENTREGA
 ---------------------------------------------------------------------
   Repositório GitHub ..... https://github.com/LeoMarsiarelli/GS26.2
   Vídeo Pitch de Venda ... ver entregaveis/link_video_pitch_venda.txt
-  Vídeo Pitch Técnico .... ver entregaveis/link_video_pitch_tecnico.txt
+  Vídeo Pitch Técnico .... ver entregaveis/link entregáveis.txt
 
 
 1. O QUE É
